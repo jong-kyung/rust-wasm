@@ -3,6 +3,7 @@ import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
 import { xyzSource } from "../config/mapConfig";
+import { fromLonLat } from "ol/proj";
 
 const useInitMap = () => {
   const [map, setMap] = useState<Map | null>(null);
@@ -20,8 +21,8 @@ const useInitMap = () => {
       ],
       view: new View({
         maxZoom: 20,
-        center: [0, 0],
-        zoom: 2,
+        center: fromLonLat([126.990138, 37.52672]),
+        zoom: 12,
       }),
       controls: [],
     });
